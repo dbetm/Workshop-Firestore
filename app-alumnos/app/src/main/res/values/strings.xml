@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">app-alumnos</string>
     <string name="agregar_datos">Agregar datos</string>
+    <string name="recuperar_documento">Recuperar documento</string>
 </resources>

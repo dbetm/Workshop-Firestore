@@ -18,4 +18,15 @@
         android:textAllCaps="false"
         android:onClick="agregarDatos"/>
 
+    <Button
+        android:id="@+id/btnObtenerDocumento"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recuperar_documento"
+        android:textAllCaps="false"
+        android:onClick="recuperarDocumento"/>
+
 </LinearLayout>

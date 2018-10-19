@@ -1,15 +1,19 @@
 package com.example.david.app_alumnos;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -59,6 +63,33 @@ public class MainActivity extends AppCompatActivity {
                                 "Error al tratar de agregar documento: " + e,
                                 Toast.LENGTH_LONG).show();
                     }
+        });
+    }
+
+    public void recuperarDocumento(View v) {
+        // Declaramos e inicializamos la referencia del documento
+        DocumentReference docRef = db.collection("alumnos").document("Tuj7ozP3n6MmVHRPE4DG");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot alumno = task.getResult();
+                    if(alumno.exists()) { // Pregunta existencial (literal)
+                        Intent intent = new Intent(getApplicationContext(), DatosAlumno.class);
+                        // alumno.getData(); Retorna un Map<String, Object>
+                        intent.putExtra("datosAlumno", alumno.getData().toString());
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "¡Alumno no encontrado!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "get failed with " + task.getException(),
+                        Toast.LENGTH_LONG).show();
+                }
+            }
         });
     }
 }
