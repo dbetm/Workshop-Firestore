@@ -1,0 +1,41 @@
+commit 7bfdc5a76e3054f218dcd08ee398ceed7af39bde
+Author: David <davbetm@gmail.com>
+Date:   Mon Oct 22 02:31:42 2018 -0500
+
+    Escuchar actualizaciones en tiempo real
+
+commit d0b703c9d9d980ba3a3fe7d7cd1454828e2f9be9
+Author: David <davbetm@gmail.com>
+Date:   Mon Oct 22 01:01:16 2018 -0500
+
+    Obtener documento - se agregan comentarios
+
+commit 5ab7214af229d9e6e15f65519e0fe6bf600aec22
+Author: David <davbetm@gmail.com>
+Date:   Fri Oct 19 03:19:45 2018 -0500
+
+    Obtener documento (alumno)
+
+commit 1ce6b630f1acf17d14e9842225d4da8e020b4955
+Author: David <davbetm@gmail.com>
+Date:   Wed Oct 17 00:27:41 2018 -0500
+
+    Agregar datos
+
+commit f68a954ee91d1282a6c7fc8e633ad7d14f7ad71b
+Author: David <davbetm@gmail.com>
+Date:   Mon Oct 15 02:16:04 2018 -0500
+
+    Inicialización de Cloud Firestore
+
+commit 16728c2d910feb0cc7da44851bdf6ebb29f57c8c
+Author: David <davbetm@gmail.com>
+Date:   Mon Oct 15 02:08:09 2018 -0500
+
+    Configuración del entorno de programación
+
+commit 004602fa6a60308748a4a50af7498f255a9a5089
+Author: David <davbetm@gmail.com>
+Date:   Mon Oct 15 01:45:28 2018 -0500
+
+    Inicio del proyecto
