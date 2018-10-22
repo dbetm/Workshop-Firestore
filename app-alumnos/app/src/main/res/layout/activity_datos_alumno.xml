@@ -80,4 +80,32 @@
         android:layout_alignStart="@+id/txtNombre"
         android:layout_alignTop="@+id/textView4"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnLanzarAgente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="171dp"
+        android:text="@string/lanzar_agente"
+        android:onClick="lanzarAgente"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="116dp"
+        android:text="@string/accion_escuchada" />
+
+    <TextView
+        android:id="@+id/txtAccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp"
+        android:text="@string/vacio" />
 </RelativeLayout>

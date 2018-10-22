@@ -2,4 +2,8 @@
     <string name="app_name">app-alumnos</string>
     <string name="agregar_datos">Agregar datos</string>
     <string name="recuperar_documento">Recuperar documento</string>
+    <string name="accion_escuchada">Acción escuchada:</string>
+    <string name="lanzar_agente">Lanzar agente de escucha</string>
+    <string name="una_accion">una acción</string>
+    <string name="vacio">------------</string>
 </resources>
