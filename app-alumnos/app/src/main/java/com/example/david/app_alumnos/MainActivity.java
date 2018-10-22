@@ -69,14 +69,20 @@ public class MainActivity extends AppCompatActivity {
     public void recuperarDocumento(View v) {
         // Declaramos e inicializamos la referencia del documento
         DocumentReference docRef = db.collection("alumnos").document("Tuj7ozP3n6MmVHRPE4DG");
+        // Se hace una llamada al método get() del objeto referencia del documento.
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()) {
+                    // Se recupera el documento con los datos, en este caso es el resultado de task
                     DocumentSnapshot alumno = task.getResult();
                     if(alumno.exists()) { // Pregunta existencial (literal)
                         Intent intent = new Intent(getApplicationContext(), DatosAlumno.class);
                         // alumno.getData(); Retorna un Map<String, Object>
+                        /*
+                         * Al intent le agregamos un parámetro llamado datosAlumno
+                         * con el string de los datos del alumno
+                         */
                         intent.putExtra("datosAlumno", alumno.getData().toString());
                         startActivity(intent);
                     }
@@ -87,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "get failed with " + task.getException(),
-                        Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });

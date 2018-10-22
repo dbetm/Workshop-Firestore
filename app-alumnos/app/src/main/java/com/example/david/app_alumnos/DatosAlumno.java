@@ -16,12 +16,12 @@ public class DatosAlumno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_alumno);
 
-        // Referencia a los TextView's
+        // 1) Referencia a los TextView's
         TextView txtNombre = findViewById(R.id.txtNombre);
         TextView txtApellido_s = findViewById(R.id.txtApellido);
         TextView txtUsername = findViewById(R.id.txtUsername);
         TextView txtNacimiento = findViewById(R.id.txtNacimiento);
-
+        // 2) Recuperar el parámetro
         String datosAlumno = getIntent().getExtras().getString("datosAlumno");
         datosAlumno = datosAlumno.replace("{", "");
         datosAlumno = datosAlumno.replace("}", "");
@@ -31,14 +31,14 @@ public class DatosAlumno extends AppCompatActivity {
         HashMap<String, Object> datos = new HashMap<>();
         String []pares = datosAlumno.split(",");
 
-        // Los agregamos a la estructura de datos
+        // 3) Los agregamos a la estructura de datos
         for (int i = 0 ;i < pares.length;i++) {
             String pair = pares[i];
             String[] keyValue = pair.split("=");
             datos.put(keyValue[0], keyValue[1]);
         }
 
-        // Se setean a los TextView correspondientes
+        // 4) Se setean a los TextView correspondientes
         txtNombre.setText(String.valueOf(datos.get("nombre")));
         txtApellido_s.setText(String.valueOf(datos.get("apellido_s")));
         txtUsername.setText(String.valueOf(datos.get("nombre_usuario")));
